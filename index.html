@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <title>Walutomat</title>
+    <meta name="description" content="Twój Kantor w internecie!">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/resultbox.css">
+    <script defer src="js/script.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header__h1">Walutomat</h1>
+    </header>
+    <main class="main">
+        <form class="form js-form">
+            <label>
+                <span class="form__label">Wybierz walute na którą chcesz zamienić*</span>
+                <select required class="form__input js-currency" name="conventer">
+                    <option value="UHA">Uha</option>
+                    <option value="EUR" selected>Eur</option>
+                    <option value="USD">Usd</option>
+                </select>
+            </label>
+            <label>
+                <span class="form__label">Wpisz ilość*</span>
+                <input class="form__input js-quantity" placeholder="Wpisz wartośc w zł" type="number"
+                    name="currencyQuantity" step="any" min="0.001" required></input>
+            </label>
+            <button class="form__button">Policz</button>
+        </form>
+        <div class="resultBox">
+            <p class="resultBox__paragraph--result"><span class="js-results"></span></p>
+            <p class="resultBox__paragraph">Do obliczenia kursu zostały wykorzystane dane z dnia 21.06.2020</p>
+        </div>
+    </main>
+</body>
+
+</html>

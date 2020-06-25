@@ -1,0 +1,14 @@
+html {
+    box-sizing: border-box;
+}
+
+*, ::before, ::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 100px auto;
+    padding: 25px;
+    background-color: #469b62;
+    font-family: 'Merriweather', serif;
+}

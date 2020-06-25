@@ -1,0 +1,22 @@
+.resultBox{
+    color: #000;
+    max-width: 600px;
+    min-height: 200px;
+    margin: 100px auto;
+    background-color: #fffacd;
+    padding: 20px;
+    border:2px solid black;
+    border-radius:5px;
+}
+.resultBox__paragraph{
+    padding:10px;
+    font-size:15px;
+    text-align:center;
+}
+
+.resultBox__paragraph--result{
+    height: 100%;
+    padding:10px;
+    font-size:24px;
+    text-align:center;
+}
