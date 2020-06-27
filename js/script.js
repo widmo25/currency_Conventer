@@ -1,32 +1,42 @@
-console.log("Witaj wariacie :D");
-let form = document.querySelector(".js-form");
-let currencyElement = document.querySelector(".js-currency");
-let quantityElement = document.querySelector(".js-quantity");
-let results = document.querySelector(".js-results");
+{
+    const welcome = () => {
+        console.log("Witaj wariacie :D");
+    }
+    welcome();
+    const calculateResult = (quantity, currency) => {
 
-let eurRate = 4.46;
-let uhaRate = 0.15;
-let usdRate = 3.99;
-form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    let currency = currencyElement.value;
-    let quantity = quantityElement.value;
-    let result;
-    switch (currency) {
-        case "EUR":
-            result = quantity / eurRate;
-            break;
+        const eurRate = 4.46;
+        const uhaRate = 0.15;
+        const usdRate = 3.99;
+        switch (currency) {
+            case "EUR":
+                return quantity / eurRate;
 
-        case "UHA":
-            result = quantity / uhaRate;
-            break;
+            case "UHA":
+                return quantity / uhaRate;
 
-        case "USD":
-            result = quantity / usdRate;
-            break;
+            case "USD":
+                return quantity / usdRate;
+        }
 
     }
-    results.innerHTML = `za ${quantity} zł otrzymamy ${result.toFixed(2)} ${currency}`;
-})
 
+    const updateResaultText = (quantity, currency) => {
+        const results = document.querySelector(".js-results");
+        const result = calculateResult(quantity, currency);
+        results.innerHTML = `za ${quantity} zł otrzymamy ${result.toFixed(2)} ${currency}`;
+    }
 
+    const init = () => {
+        const form = document.querySelector(".js-form");
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+            const quantityElement = document.querySelector(".js-quantity");
+            const currencyElement = document.querySelector(".js-currency");
+            const currency = currencyElement.value;
+            const quantity = +quantityElement.value;
+            updateResaultText(quantity, currency)
+        })
+    }
+    init();
+}
